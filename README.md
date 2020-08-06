@@ -1,4 +1,4 @@
-#MERN Stack Boiler Plate Script
+# MERN Stack Boiler Plate Script
 
 This script is designed to establish a basic boiler plate for a 
 full-stack MERN application. I discovered I was repeating myself a lot everytime
