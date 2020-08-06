@@ -12,7 +12,7 @@ Set-Location project/
 New-Item -Path . -Name 'ScriptLog.txt' -ItemType 'file'
 
 #Declare variables
-$LogFile = $PSScriptRoot + "\log.txt"
+$LogFile =  ".\ScriptLog.txt"
 $Express = "const express = require('express');"
 $Mongoose = "const mongoose = require('mongoose');"
 $App = "const app = express();"
@@ -43,9 +43,12 @@ npm i --save express mongoose config dotenv bcryptjs concurrently jsonwebtoken
 npm i --save-dev nodemon
 LogMessage -Message 'dependencies installed'
 
+#Check for vulnerabilities and fixes where possible
+npm audit fix
+
 #Create Initial App Structure
 #Step One, Create Git Ignore and ReadMe Files
-New-Item -Path . -Name '.gitignore' -ItemType 'file' -Value ".env `r`nnode_modules `r`npackage-lock.json `r`nlog.txt `r`n\config"
+New-Item -Path . -Name '.gitignore' -ItemType 'file' -Value ".env `r`nnode_modules `r`npackage-lock.json `r`nScriptLog.txt `r`n\config"
 New-Item -Path . -Name 'README.md' -ItemType 'file' -Value '#Welcome to your MERN Stack App'
 LogMessage -Message 'Created git ignore and read me files'
 
@@ -86,6 +89,9 @@ npx create-react-app .
 npm i --save-dev uuid
 npm i --save axios react-router-dom react-transition-group reactstrap react-redux redux redux-thunk
 LogMessage -Message 'client dependencies installed'
+
+#Check for vulnerabilities and fixes where possible
+npm audit fix
 
 #Move out of Client directory
 Set-Location ../
