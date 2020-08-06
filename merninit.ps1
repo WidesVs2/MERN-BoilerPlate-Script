@@ -43,9 +43,6 @@ npm i --save express mongoose config dotenv bcryptjs concurrently jsonwebtoken
 npm i --save-dev nodemon
 LogMessage -Message 'dependencies installed'
 
-#Check for vulnerabilities and fixes where possible
-npm audit fix
-
 #Create Initial App Structure
 #Step One, Create Git Ignore and ReadMe Files
 New-Item -Path . -Name '.gitignore' -ItemType 'file' -Value ".env `r`nnode_modules `r`npackage-lock.json `r`nScriptLog.txt `r`n\config"
@@ -96,13 +93,10 @@ npm i --save-dev uuid
 npm i --save axios react-router-dom react-transition-group reactstrap react-redux redux redux-thunk
 LogMessage -Message 'client dependencies installed'
 
-#Check for vulnerabilities and fixes where possible
-npm audit fix
-
 #Create Client Directories
-New-Item -Path .\client\src -Name 'components' -ItemType 'directory'
-New-Item -Path .\client\src -Name 'actions' -ItemType 'directory'
-New-Item -Path .\client\src -Name 'reducers' -ItemType 'directory'
+New-Item -Path .\src -Name 'components' -ItemType 'directory'
+New-Item -Path .\src -Name 'actions' -ItemType 'directory'
+New-Item -Path .\src -Name 'reducers' -ItemType 'directory'
 
 #Add Navbar Component
 New-Item -Path .\src\components -Name 'AppNavbar.js' -ItemType 'file'
