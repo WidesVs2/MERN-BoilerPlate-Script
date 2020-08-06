@@ -100,53 +100,7 @@ New-Item -Path .\src -Name 'reducers' -ItemType 'directory'
 
 #Add Navbar Component
 New-Item -Path .\src\components -Name 'AppNavbar.js' -ItemType 'file'
-Add-Content -Path .\src\components\AppNavbar.js -Value "import React, { Component } from 'react'`r`n
-import {
-    Collapse,
-    Navbar,
-    NavbarBrand,
-    NavbarToggler,
-    Nav,
-    NavItem,
-    NavLink,
-    Container
-} from 'reactstrap'`r`n
-
-class AppNavbar extends Component {`r`n
-    state = {`r`n
-        isOpen: false`r`n
-    }`r`n
-
-    toggle = () => {`r`n
-        this.setState({`r`n
-            isOpen: !this.state.isOpen`r`n
-        })`r`n
-    }`r`n
-
-    render() {`r`n
-        return (`r`n
-            <div>`r`n
-                <Navbar color=`"dark`" dark expand=`"md`" className=`"mb-5`">`r`n
-                    <Container>`r`n
-                        <NavbarBrand href=`"/`">ShoppingList</NavbarBrand>`r`n
-                        <NavbarToggler onClick={this.toggle}></NavbarToggler>`r`n
-                        <Collapse isOpen={this.state.isOpen} navbar>`r`n
-                            <Nav className=`"ml-auto`" navbar>`r`n
-                                <NavItem>`r`n
-                                    <NavLink href=`"https://github.com/WidesVs2`">`r`n
-                                        Github`r`n
-                                    </NavLink>`r`n
-                                </NavItem>`r`n
-                            </Nav>`r`n
-                        </Collapse>`r`n
-                    </Container>`r`n
-                </Navbar>`r`n
-            </div>`r`n
-        )`r`n
-    }`r`n
-}`r`n
-
-export default AppNavbar"
+Add-Content -Path .\src\components\AppNavbar.js -Value "import React, { Component } from 'react'`r`nimport {Collapse,Navbar,NavbarBrand,NavbarToggler,Nav,NavItem,NavLink,Container} from 'reactstrap'`r`nclass AppNavbar extends Component {`r`nstate = {`r`nisOpen: false`r`n}`r`ntoggle = () => {`r`nthis.setState({`r`nisOpen: !this.state.isOpen`r`n})`r`n}`r`nrender() {`r`nreturn (`r`n<div>`r`n<Navbar color=`"dark`" dark expand=`"md`" className=`"mb-5`">`r`n<Container>`r`n<NavbarBrand href=`"/`">ShoppingList</NavbarBrand>`r`n<NavbarToggler onClick={this.toggle}></NavbarToggler>`r`n<Collapse isOpen={this.state.isOpen} navbar>`r`n<Nav className=`"ml-auto`" navbar>`r`n<NavItem>`r`n<NavLink href=`"https://github.com/WidesVs2`">`r`nGithub`r`n</NavLink>`r`n</NavItem>`r`n</Nav>`r`n</Collapse>`r`n</Container>`r`n</Navbar>`r`n</div>`r`n)`r`n}`r`n}`r`nexport default AppNavbar"
 
 #Move out of Client directory
 Set-Location ../
