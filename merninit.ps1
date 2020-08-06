@@ -49,7 +49,7 @@ npm audit fix
 #Create Initial App Structure
 #Step One, Create Git Ignore and ReadMe Files
 New-Item -Path . -Name '.gitignore' -ItemType 'file' -Value ".env `r`nnode_modules `r`npackage-lock.json `r`nScriptLog.txt `r`n\config"
-New-Item -Path . -Name 'README.md' -ItemType 'file' -Value '#Welcome to your MERN Stack App'
+New-Item -Path . -Name 'README.md' -ItemType 'file' -Value '# Welcome to your MERN Stack App'
 LogMessage -Message 'Created git ignore and read me files'
 
 #Step Two, Create Express Server
@@ -71,6 +71,12 @@ LogMessage -Message 'Directories created'
 #Fill in fields between < and >
 New-Item -Path .\config\ -Name 'default.json' -ItemType 'file' -Value "{`"database`": `"<MongoUri>`",`"jwtSecret`": `"<SecretToken>`"}"
 LogMessage -Message 'created config file'
+
+#Step Five, Create Boiler Plate for Routes and models
+#This step WILL need reworked for your specific application
+#Basic code only
+New-Item -Path .\api\models -Name "Item.js" -ItemType "file" -Value "//Basic Item Model`r`nconst mongoose = require('mongoose');`r`nconst Schema = mongoose.Schema;`r`n`r`nconst ItemSchema = new Schema({ name: { type: String, required: true }, date: { type: Date, default: Date.now } });`r`n`r`nmodule.exports = Item = mongoose.model('item', ItemSchema);"
+New-Item -Path .\api\routes -Name 'items.js' -ItemType 'file' -Value "//Basic Routes`r`nconst express = require('express');`r`nconst router = express.Router();`r`n`r`n//Item Model`r`nconst Item = require('../models/Item.js')`r`nrouter.get('/', (req, res) => { Item.find().sort({ date: -1 }).then(items => res.status(200).json(items)).catch(err => console.log(err)) });`r`n`r`nmodule.exports = router;"
 
 #Creates initial GIT Repository
 git init
