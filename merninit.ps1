@@ -1,3 +1,5 @@
+# WARNING: CURRENTLY BROKEN! WILL NOT FUNCTION! WIP!
+
 #This Script is used to create a MERN Stack Boiler-Plate
 #To run, navigate to directory where you want to create your project
 #Open PowerShell, run this script from current directory
