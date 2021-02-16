@@ -1,3 +1,5 @@
+# *WARNING:BROKEN! CURRENTLY NON_FUNTIONING! WIP!*
+
 # MERN Stack Boiler Plate Script
 
 This script is designed to establish a basic boiler plate for a 
